@@ -14,14 +14,14 @@ goosh.module.web = function(){
 
   // perform the ajax query
   this.query = function(cmdstr,query) {
-//    goosh.ajax.query("//ajax.googleapis.com/ajax/services/search/"+cmdstr+"?v=1.0&start="+this.qstart+"&hl="+goosh.config.lang+"&callback=goosh.modobj."+this.name+".render&q="+encodeURIComponent(query)+'&key='+goosh.config.apikey+"&rsz=large");
-
+    goosh.ajax.query("/q.php?start=" + (this.qstart + 1) + "&num=" + goosh.config.numres + "&hl=" + goosh.config.lang + "&callback=goosh.modobj." + this.name + ".render&q=" + encodeURIComponent(query) + "&rsz=large&apikey=" + goosh.config.apikey + "&cx=" + goosh.config.cx)
+/*
     var customSearchOptions = {};
 customSearchOptions[google.search.Search.RESTRICT_EXTENDED_ARGS] = {
   'lr': 'lang_'+goosh.config.lang
 //  'gl': 'date'
 };
-    cs = new google.search.CustomSearchControl('004431332481073456201:1y01bmxbens', customSearchOptions);
+    cs = new google.search.CustomSearchControl(goosh.config.cx, customSearchOptions);
 //    cs.enableAds('pub-6992080843066528');
 
     cs.setResultSetSize(goosh.config.results);
@@ -55,7 +55,7 @@ customSearchOptions[google.search.Search.RESTRICT_EXTENDED_ARGS] = {
 
     window.i = ((goosh.config.numres-1) * this.start);
     cs.execute(query,this.start+1);
-
+*/
   }
 
 
@@ -99,8 +99,9 @@ customSearchOptions[google.search.Search.RESTRICT_EXTENDED_ARGS] = {
 	out += r.content;
 	out += "<br/>";
 	out += '<a href="'+url+'" target="_blank" class="info" style="text-decoration:none;">'+r.unescapedUrl+"</a>";
+	out += '&nbsp;<a title="view cached" href="' + r.cacheUrl + '" target="_blank" class="info" style="text-decoration:none;">[c]</a>';
 	out += "<br/>";
-	//if(r.thumb) out += '<a href="'+r.unescapedUrl+'" target="_blank">'+r.thumb+"</a><br/>";
+	if(r.thumb) out += '<a href="'+r.unescapedUrl+'" target="_blank">'+r.thumb+"</a><br/>";
 	out += "&nbsp;</td></tr>";
       }
 

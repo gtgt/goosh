@@ -31,7 +31,7 @@ goosh.modules.register = function(name,base){
        'goosh.modules.list["'+name+'"] = goosh.modobj.'+name+";");
 }
 
-<?
+<?php
 include("goosh/module/web.js");
 
 

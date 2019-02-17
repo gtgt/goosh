@@ -1,13 +1,14 @@
 goosh.lib.namespace("goosh.config");
 
-goosh.config.apikey = "ABQIAAAA0cXSEVCNSwf_x74KTtPJMRShYK5vgJfK0afUKMRqjECszDItkhTOIyZ74499O_ys5nJIQuP4sq4nZg";
+goosh.config.apikey = "<your api key>";
+goosh.config.cx = "<your search engine id>";
 
 goosh.config.user = "guest";
-goosh.config.host = "goosh.org";
+goosh.config.host = "<doamin name>";
 goosh.config.mode = "web";
 goosh.config.pend = ">&nbsp;";
 
-goosh.config.numres = 4;
+goosh.config.numres = 9;
 goosh.config.timeout = 4;
 
 goosh.config.start=0;

@@ -1,25 +1,25 @@
-<?
+<?php
         header('Content-Type: text/html; charset=utf-8');
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>goosh.org - the unofficial google shell.</title>
+<title>search.kani.hu - the unofficial google shell.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />  
 <style type="text/css">
-<? include("goosh.css"); ?>
+<?php include("goosh.css"); ?>
 </style>
 <script src="//www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
 //<!--
-<? include("notice.txt");?>
-<? 
-if($_GET['deploy'] != "") 
+<?php include("notice.txt");?>
+<?php
+if($_GET['deploy'] ?? "" != "") 
  include("goosh.js.compr");
 else
- include("goosh.js");
+ include("goosh/goosh.js");
 
 ?>
 //-->
@@ -49,33 +49,23 @@ else
 
 <div id="output">
 
- <? date_default_timezone_set('UTC'); ?>
+ <?php date_default_timezone_set('CET'); ?>
 
-<span class='less'>Goosh goosh.org 0.6.0-beta #1 <? echo str_replace("+0000","UTC",date(DATE_RFC822,@filemtime("goosh.js.compr")));?> Google/Ajax</span><br/> 
+<span class='less'>Goosh goosh.org 0.7.0-beta #1 <?php echo str_replace("+0000","UTC",date(DATE_RFC822,@filemtime("goosh.js.compr")));?> Google/Ajax</span><br/>
  <br/>
 <span class='info'>Welcome to goosh.org - the unofficial google shell.</span><br/>
  <br/>
-This google-interface behaves similar to a unix-shell.<br/>
+This google-interface behaves similar to a unix-shell.
 You type commands and the results are shown on this page.<br/>
 <br/>
-goosh is powered by <a href='https://www.google.com/cse/' target='_blank'>google</a> custom search.
+goosh is powered by <a href='https://www.google.com/cse/' target='_blank'>google</a> custom search and written by <a href='http://stefan.grothkopp.com/'>Stefan Grothkopp</a>
 <br/>
-<br/>
-goosh is written by <a href='http://stefan.grothkopp.com/'>Stefan Grothkopp</a> 
-<script type="text/javascript">
-// <!--
-var gmail = "xsg.de";
-document.write("&lt;<a href='mailto:goosh"+"@"+gmail+"?subject=goosh.org' style='text-decoration:none; color: #000;'>goosh"+"@"+gmail+"</a>&gt;");
-//-->
-</script>
 <br/>
 it is NOT an official google product!<br/>
 goosh is <a href='http://code.google.com/p/goosh/' target='_blank'>open source</a> under the Artistic License/GPL.<br/>
-<? include("ad.html"); ?>
 <br/>
  Enter <span class='info'>help</span> or <span class='info'>h</span> for a list of commands.
 <br/>
- <br/>
 </div>
 <div id="input">
 <form name='f' onsubmit='return false;' class='cmdline' action=''>
@@ -84,15 +74,11 @@ goosh is <a href='http://code.google.com/p/goosh/' target='_blank'>open source</
 </div>
 <script type="text/javascript">
 //<!--
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+/*var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-//-->
-</script>
-<script type="text/javascript">
-//<!--
 var pageTracker = _gat._getTracker("UA-118992-4");
 pageTracker._initData();
-pageTracker._trackPageview();
+pageTracker._trackPageview();*/
 //-->
 </script>
 </body>

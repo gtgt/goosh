@@ -1,7 +1,7 @@
 var goosh = new Object();
 goosh.lib = new Object();
 
-<?
+<?php
  include("goosh/lib/namespace.js");
  include("goosh/lib/in_array.js");
  include("goosh/lib/chop.js");

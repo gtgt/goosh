@@ -23,7 +23,7 @@ goosh.set.list['lang'].set = function(val) {
   return true;
 };
 
-goosh.set.list['results'] = new goosh.set.base("goosh.config.numres","4","number of results for google-searches",1,100);
+goosh.set.list['results'] = new goosh.set.base("goosh.config.numres","9","number of results for google-searches",1,100);
 goosh.set.list['timeout'] = new goosh.set.base("goosh.config.timeout","4","timeout for ajax requests in seconds",1,100);
 
 goosh.set.list['style.bg'] = new goosh.set.base("goosh.config.bgcolor","#FFFFFF","goosh background color");
@@ -80,7 +80,7 @@ goosh.set.list['style.vlink'].set = function(val){
 goosh.set.list['theme'] = new goosh.set.base("goosh.config.theme","","ace theme");
 goosh.set.list['theme'].set = function(val){
 //  goosh.gui.setstyleclass("a:visited","color: "+val);
-  goosh.gui.css('/css/'+val+'.css');
+  if (val) goosh.gui.css('/css/'+val+'.css');
   goosh.config.theme = val;
   return true;
 }

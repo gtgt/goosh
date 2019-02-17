@@ -1,7 +1,7 @@
 var goosh = new Object();
 goosh.lib = new Object();
 
-<?
+<?php
 include("lib/namespace.js");
 include("config/config.js");
 include("lang/lang.js");
@@ -47,7 +47,7 @@ function register_searcher(name,base){
       'searchers["'+name+'"] = searchers_'+name+";");
 }
 
-<?
+<?php
 include("searchers/web.js");
 
 if ($handle = opendir('searchers')) {
